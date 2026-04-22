@@ -3,23 +3,17 @@ class HighestGwaFinder:
         self.student_gwa = student_gwa
         self.gwa_finder = []
 
+    def load_students(self):
+        with open(self.student_gwa, 'r') as file:
+            for line in file:
+                line = line.strip()
+                name, gwa = line.split(",")
+                self.gwa_finder.append((name.strip(), float(gwa)))
+
     def finding_highest_gwa(self):
-        try:
-            with open(self.student_gwa, 'r') as file:
-                highest_name = " "
-                highest_gwa = float("inf")
-
-                for name_gwa in file:
-                    name_gwa = name_gwa.strip()
-                    name, gwa = name_gwa.split(",")
-                    gwa = float(gwa.strip())
-
-                    if gwa < highest_gwa:
-                        highest_gwa = gwa
-                        highest_name = name.strip()
-
-        except FileNotFoundError:
-            print("File not found.")
-            return None, None
-
+        highest_name, highest_gwa = min(self.gwa_finder, key=lambda x: x[1])
         return highest_name, highest_gwa
+
+    def top_three(self):
+        sorted_students = sorted(self.gwa_finder, key=lambda x: x[1])
+        return sorted_students[:3]
