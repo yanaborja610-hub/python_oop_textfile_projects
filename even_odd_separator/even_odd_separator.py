@@ -12,3 +12,13 @@ class EvenOddSeparator:
                     self.even_numbers.append(numbers)
                 else:
                     self.odd_numbers.append(numbers)
+
+    def write_even_file(self):
+        with open('even.txt', 'w') as even_file:
+            for numbers in self.even_numbers:
+                even_file.write(str(numbers) + '\n')
+
+    def write_odd_file(self):
+        with open('odd.txt', 'w') as odd_file:
+            for numbers in self.odd_numbers:
+                odd_file.write(str(numbers) + '\n')
