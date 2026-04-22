@@ -11,3 +11,7 @@ while True:
     print("4. Exit")
 
     choice = input("Enter choice: ")
+
+    if choice == "1":
+        name, gwa = finder.finding_highest_gwa()
+        print(f"\nTOP STUDENT:\n{name}: {gwa:.2f}")
