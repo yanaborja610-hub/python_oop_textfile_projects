@@ -15,3 +15,10 @@ while True:
     if choice == "1":
         name, gwa = finder.finding_highest_gwa()
         print(f"\nTOP STUDENT:\n{name}: {gwa:.2f}")
+
+    elif choice == "2":
+        top_three = finder.top_three()
+        print("\nTOP 3 STUDENTS")
+
+        for i, (name, gwa) in enumerate(top_three, start=1):
+            print(f"{i}. {name} - {gwa:.2f}")
