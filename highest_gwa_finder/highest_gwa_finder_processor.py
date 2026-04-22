@@ -29,3 +29,7 @@ while True:
 
         for i, (name, gwa) in enumerate(all_students_ranked, start=1):
             print(f"{i}. {name} - {gwa:.2f}")
+
+    elif choice == "4":
+        print("\nProgram Stopped.")
+        break
