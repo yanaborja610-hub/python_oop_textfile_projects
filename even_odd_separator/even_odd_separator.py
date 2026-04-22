@@ -26,9 +26,9 @@ class EvenOddSeparator:
                 odd_file.write(str(numbers) + '\n')
 
     def display_summary(self):
-        print("SUMMARY\n")
+        print("\nSUMMARY\n")
         print(f"Total Even Numbers:{len(self.even_numbers)}")
-        print(f"Total Odd Numbers:{len(self.odd_numbers)}")
+        print(f"Total Odd Numbers:{len(self.odd_numbers)}\n")
 
         minimum_even = min(self.even_numbers)
         minimum_odd = min(self.odd_numbers)
@@ -38,9 +38,3 @@ class EvenOddSeparator:
 
         print(f"Minimum Even Number: {minimum_even:<10}Maximum Even Number: {maximum_even}")
         print(f"Minimum Odd Number: {minimum_odd:<11}Maximum Odd Number: {maximum_odd}")
-
-processor = EvenOddSeparator("numbers.txt")
-processor.process_numbers()
-processor.write_even_file()
-processor.write_odd_file()
-processor.display_summary()
