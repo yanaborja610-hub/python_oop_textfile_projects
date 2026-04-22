@@ -17,3 +17,6 @@ class HighestGwaFinder:
     def top_three(self):
         sorted_students = sorted(self.gwa_finder, key=lambda x: x[1])
         return sorted_students[:3]
+
+    def display_list_of_students(self):
+        return sorted(self.gwa_finder, key=lambda x: x[1])
