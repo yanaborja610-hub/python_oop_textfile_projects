@@ -7,11 +7,11 @@ class EvenOddSeparator:
     def process_numbers(self):
         with(open(self.numbers, 'r')) as numbers_file:
             for numbers in numbers_file:
-                numbers = numbers.strip()
+                number= int(numbers.strip())
                 if number % 2 == 0:
-                    self.even_numbers.append(numbers)
+                    self.even_numbers.append(number)
                 else:
-                    self.odd_numbers.append(numbers)
+                    self.odd_numbers.append(number)
 
     def write_even_file(self):
         with open('even.txt', 'w') as even_file:
@@ -22,3 +22,8 @@ class EvenOddSeparator:
         with open('odd.txt', 'w') as odd_file:
             for numbers in self.odd_numbers:
                 odd_file.write(str(numbers) + '\n')
+
+processor = EvenOddSeparator("numbers.txt")
+processor.process_numbers()
+processor.write_even_file()
+processor.write_odd_file()
