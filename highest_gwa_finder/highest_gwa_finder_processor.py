@@ -22,3 +22,10 @@ while True:
 
         for i, (name, gwa) in enumerate(top_three, start=1):
             print(f"{i}. {name} - {gwa:.2f}")
+
+    elif choice == "3":
+        all_students_ranked = finder.display_list_of_students()
+        print("\n=== ALL STUDENTS (RANKED) ===")
+
+        for i, (name, gwa) in enumerate(all_students_ranked, start=1):
+            print(f"{i}. {name} - {gwa:.2f}")
