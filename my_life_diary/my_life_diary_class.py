@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class MyLifeDiary:
     def __init__(self, filename="my_life.txt"):
         self.filename = filename
@@ -21,8 +23,11 @@ class MyLifeDiary:
                 break
 
     def save_text_to_file(self):
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         with open(self.filename, "a") as file:
-            file.write("\nEntry\n")
+            file.write(f"\n Entry on {timestamp}\n")
+            file.write("-" * 40 + "\n")
 
             for i, line in enumerate(self.lines, start = 1):
                 file.write(f"{i}. {line}\n")
