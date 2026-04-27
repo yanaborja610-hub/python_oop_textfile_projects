@@ -47,6 +47,8 @@ class IntegerTransformerSystem:
         print(self.odd_cubed)
 
     def run(self):
+        self.even_squared.sort()
+        self.odd_cubed.sort()
         self.get_user_input()
         self.process_numbers()
         self.write_files()
