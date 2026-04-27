@@ -44,7 +44,6 @@ class IntegerTransformerSystem:
         with open("triple.txt", "w") as odd_file:
             odd_file.write("ODD NUMBERS CUBED:\n\n")
             for original_number, odd_cubed in self.odd_cubed:
-                print("\n ODD NUMBERS CUBED:\n")
                 odd_file.write(f"{original_number} -> {odd_cubed}\n")
 
     def run(self):
