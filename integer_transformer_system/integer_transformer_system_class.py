@@ -22,3 +22,10 @@ class IntegerTransformerSystem:
             file.write(" ".join(map(str, self.numbers)))
 
         print("\n Data saved to integers.txt")
+
+    def process_numbers(self):
+        for number in self.numbers:
+            if number % 2 == 0:
+                self.even_squared.append(number ** 2)
+            else:
+                self.odd_cubed.append(number ** 3)
