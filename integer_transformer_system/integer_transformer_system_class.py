@@ -38,3 +38,10 @@ class IntegerTransformerSystem:
         with open("triple.txt", "w") as odd_file:
             for num in self.odd_cubed:
                 odd_file.write(str(num) + "\n")
+
+    def display_results(self):
+        print("double.txt (even numbers squared):")
+        print(self.even_squared)
+
+        print("triple.txt (odd numbers cubed):")
+        print(self.odd_cubed)
