@@ -17,3 +17,8 @@ class IntegerTransformerSystem:
 
                 except ValueError:
                     print("Invalid Input. Please enter an integer")
+
+        with open(self.filename, "w") as file:
+            file.write(" ".join(map(str, self.numbers)))
+
+        print("\n Data saved to integers.txt")
