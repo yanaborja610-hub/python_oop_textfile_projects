@@ -1,4 +1,4 @@
-class MyLifeDiary():
+class MyLifeDiary:
     def __init__(self, filename="my_life.txt"):
         self.filename = filename
         self.lines = []
