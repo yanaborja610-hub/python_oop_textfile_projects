@@ -16,7 +16,7 @@ class MyLifeDiary:
                 self.lines.append(text)
                 line_number += 1
             else:
-                pass
+                print("Please write something.")
 
             choice = input("Are there more lines? (yes/no): ").lower().strip()
             if choice != 'yes':
