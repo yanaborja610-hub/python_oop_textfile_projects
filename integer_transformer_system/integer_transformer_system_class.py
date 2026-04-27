@@ -26,9 +26,9 @@ class IntegerTransformerSystem:
     def process_numbers(self):
         for number in self.numbers:
             if number % 2 == 0:
-                self.even_squared.append(number ** 2)
+                self.even_squared.append((number, number ** 2))
             else:
-                self.odd_cubed.append(number ** 3)
+                self.odd_cubed.append((number, number ** 3))
 
     def write_files(self):
         with open("double.txt", "w") as even_file:
@@ -49,9 +49,12 @@ class IntegerTransformerSystem:
             print(f"{original_number} -> {odd_cubed}")
 
     def run(self):
-        self.even_squared.sort()
-        self.odd_cubed.sort()
         self.get_user_input()
         self.process_numbers()
+
+        self.even_squared.sort(key=lambda x: x[1])
+        self.odd_cubed.sort(key=lambda x: x[1])
+
         self.write_files()
+        self.display_results()
         print("Done!")
