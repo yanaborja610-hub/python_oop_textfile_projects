@@ -13,6 +13,12 @@ class IntegerTransformerSystem:
                 try:
                     numbers = (int(input(f"Enter Number {i}: ")))
                     self.numbers.append(numbers)
+
+                    if numbers in self.numbers:
+                        print("Duplicate number detected. Please enter a different number.")
+                        continue
+
+                    self.numbers.append(numbers)
                     break
 
                 except ValueError:
