@@ -19,3 +19,12 @@ class MyLifeDiary():
             choice = input("Are there more lines? (yes/no): ").lower().strip()
             if choice != 'yes':
                 break
+
+    def save_text_to_file(self):
+        with open(self.filename, "a") as file:
+            file.writelines("Entry")
+
+            for i, line in enumerate(self.lines, start = 1):
+                file.write(f"{i}. {line}\n")
+
+        print(f"\n Entry saved to {self.filename}!")
