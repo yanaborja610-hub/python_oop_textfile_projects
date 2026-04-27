@@ -40,11 +40,13 @@ class IntegerTransformerSystem:
                 odd_file.write(str(num) + "\n")
 
     def display_results(self):
-        print("double.txt (even numbers squared):")
-        print(self.even_squared)
+        print("\n EVEN NUMBERS (Squared):")
+        for original_number, even_squared in self.even_squared:
+            print(f"{original_number} -> {even_squared}")
 
-        print("triple.txt (odd numbers cubed):")
-        print(self.odd_cubed)
+        print("\n ODD NUMBERS (Cubed):")
+        for original_number, odd_cubed in self.odd_cubed:
+            print(f"{original_number} -> {odd_cubed}")
 
     def run(self):
         self.even_squared.sort()
