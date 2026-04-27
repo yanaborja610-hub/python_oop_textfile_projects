@@ -32,12 +32,12 @@ class IntegerTransformerSystem:
 
     def write_files(self):
         with open("double.txt", "w") as even_file:
-            for num in self.even_squared:
-                even_file.write(str(num) + "\n")
+            for original_number, even_squared in self.even_squared:
+                even_file.write(f"{original_number} -> {even_squared}\n")
 
         with open("triple.txt", "w") as odd_file:
-            for num in self.odd_cubed:
-                odd_file.write(str(num) + "\n")
+            for original_number, odd_cubed in self.odd_cubed:
+                odd_file.write(f"{original_number} -> {odd_cubed}\n")
 
     def display_results(self):
         print("\n EVEN NUMBERS (Squared):")
