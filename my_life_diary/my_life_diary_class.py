@@ -1,5 +1,5 @@
 class MyLifeDiary():
-    def __init__(self, self.filename="my_life.txt"):
+    def __init__(self, filename="my_life.txt"):
         self.filename = filename
         self.lines = []
 
@@ -22,9 +22,24 @@ class MyLifeDiary():
 
     def save_text_to_file(self):
         with open(self.filename, "a") as file:
-            file.writelines("Entry")
+            file.write("Entry")
 
             for i, line in enumerate(self.lines, start = 1):
                 file.write(f"{i}. {line}\n")
 
         print(f"\n Entry saved to {self.filename}!")
+
+    def read_entries(self):
+        try:
+            with open(self.filename, "r") as file:
+                content = file.read()
+
+                if content.strip():
+                    print("\nPast Entries\n")
+                    print(content)
+
+                else:
+                    print("\nNo Entries\n")
+
+        except FileNotFoundError:
+            print("\nFile is empty\n")
