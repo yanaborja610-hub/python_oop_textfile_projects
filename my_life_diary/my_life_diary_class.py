@@ -22,7 +22,7 @@ class MyLifeDiary:
 
     def save_text_to_file(self):
         with open(self.filename, "a") as file:
-            file.write("Entry")
+            file.write("\nEntry\n")
 
             for i, line in enumerate(self.lines, start = 1):
                 file.write(f"{i}. {line}\n")
