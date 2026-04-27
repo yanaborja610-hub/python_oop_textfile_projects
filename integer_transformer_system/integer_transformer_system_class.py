@@ -45,3 +45,9 @@ class IntegerTransformerSystem:
 
         print("triple.txt (odd numbers cubed):")
         print(self.odd_cubed)
+
+    def run(self):
+        self.get_user_input()
+        self.process_numbers()
+        self.write_files()
+        print("Done!")
