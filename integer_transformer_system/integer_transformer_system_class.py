@@ -31,13 +31,14 @@ class IntegerTransformerSystem:
                 self.odd_cubed.append((number, number ** 3))
 
     def write_files(self):
-        print("\n EVEN NUMBERS SQUARED:\n")
         with open("double.txt", "w") as even_file:
             for original_number, even_squared in self.even_squared:
+                print("\n EVEN NUMBERS SQUARED:\n")
                 even_file.write(f"{original_number} -> {even_squared}\n")
-        print("\n ODD NUMBERS CUBED:\n")
+
         with open("triple.txt", "w") as odd_file:
             for original_number, odd_cubed in self.odd_cubed:
+                print("\n ODD NUMBERS CUBED:\n")
                 odd_file.write(f"{original_number} -> {odd_cubed}\n")
 
     def run(self):
